@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+/*reset*/
+
+@import "reset/_sanitize";
+
+/*lib*/
+
+@import "lib/_properties";
+@import "lib/_mixin";
+@import "lib/_base";
+@import "lib/_util";
+
+/*parts*/
+
+@import "parts/_ly-layout";
+@import "parts/_hl-headline";
+@import "parts/_sw-tips";
+@import "parts/_bn-buttn";
+
+/*pages*/
+
+@import "pages/_index";

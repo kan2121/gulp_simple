@@ -1,0 +1,436 @@
+@charset "utf-8";
+.index {
+  &-pageBlock {
+    min-height: 100vh;
+    padding-top: 100px;
+  }
+  &-profBlock {
+    background: #f0f0f0;
+    min-height: 100vh;
+    padding-top: 100px;
+  }
+  //TOPmenu
+  &-view {
+    .index {
+      &-Caption {
+        margin-top: 0px;
+        color: #666;
+        display: inline-block;
+      }
+      &-github {
+        display: inline-block;
+        margin-left: 1em;
+      }
+      &-TopBg {
+        background: transparent url(../img/bg_pc.svg) top center no-repeat;
+        background-size: 100% auto;
+        height: 90vh;
+        overflow: hidden;
+        @include sp() {
+          background: transparent url(../img/bg_sp.svg) top center no-repeat;
+          background-size: 100% auto;
+        }
+        @include tab() {
+          background: transparent url(../img/bg_tab.svg) top center no-repeat;
+          background-size: 100% auto;
+          padding-left: 8%;
+        }
+      }
+      //top
+      &-btnStyle01 {
+        display: inline-block;
+        padding: 0;
+        margin: 10px;
+        text-decoration: none;
+        border-radius: 3px;
+        background: #ccc;
+        color: #666;
+        @include font-size(18);
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        &__ttl {
+          font-family: $font-family-pop2;
+          @include font-size(40);
+          display: block;
+          font-weight: normal;
+          line-height: 1em;
+          color: #fff;
+          z-index: -10;
+          margin: auto;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          @include sp() {
+            top: auto;
+            left: auto;
+            bottom: -2px;
+            right: 2px;
+            position: absolute;
+          }
+          @include pc() {
+            position: absolute;
+            margin-top: 50px;
+          }
+          @include tab() {
+            position: absolute;
+            margin-top: 50px;
+          }
+        }
+        &__cap {
+          display: inline-block;
+          line-height: 1em;
+          height: 1em;
+          z-index: 10;
+          margin: auto;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          // border: 1px solid #00c;
+          @include font-size(20);
+          @include sp() {
+            position: absolute;
+          }
+          @include pc() {
+            position: absolute;
+            margin-top: 100px;
+          }
+          @include tab() {
+            margin-top: 100px;
+            position: absolute;
+          }
+        }
+      }
+      &-pageNavBlock {
+        text-align: center;
+        margin: 20% auto 0;
+        width: 100%;
+        &__btn {
+          margin: auto;
+          width: 40%;
+          height: 180px;
+          margin-left: 5%;
+          &:first-child {
+            margin-left: 0%;
+          }
+          @include sp() {
+            width: 80%;
+            height: 80px;
+            margin-left: 0%;
+            margin-bottom: 25px;
+          }
+          @include tab() {
+            width: 40%;
+          }
+          &--skill {
+            background: #a4c400;
+            color: #fff;
+          }
+          &--prof {
+            background: #f0a30a;
+            color: #fff;
+          }
+        }
+      }
+      //scroll
+      &-pageScrollBtnBox {
+        position: relative;
+        margin: 10% auto 0;
+        display: block;
+        text-align: center;
+        width: 100px;
+        height: 2em;
+        z-index: 10;
+      }
+      &-pageScrollBtn {
+        height: inherit;
+        width: inherit;
+        text-align: center;
+        display: inline-block;
+        line-height: 1em;
+        @include font-size(15);
+        color: #666;
+        font-family: $font-family-pop2;
+        text-decoration: none;
+        font-weight: bold;
+        z-index: 10;
+        &::before {
+          content: "";
+          display: block;
+          width: 80px;
+          height: 80px;
+          background: rgba(200, 200, 200, 0.5);
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          margin: auto;
+          border-radius: 50%;
+          z-index: -1;
+        }
+        &::after {
+          content: "";
+          display: block;
+          width: 1em;
+          height: 1em;
+          border-bottom: 2px solid #999;
+          border-right: 2px solid #999;
+          position: absolute;
+          top: 2em;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          margin: auto;
+          z-index: -1;
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+  //menubar スクロール時の表示形式
+  &-menubar {
+    @include cf;
+    .hl-style01 {
+      display: inline-block;
+    }
+    .index {
+      &-Caption {
+        display: inline-block;
+        margin: 10px 10px 0;
+      }
+      &-github {
+        display: inline-block;
+        margin: 10px 5px 0;
+        @include sp() {
+          margin: 0 5px 0;
+        }
+      }
+      &-TopBg {
+        display: inline-block;
+        @include sp() {}
+      }
+      &-btnStyle01 {
+        &__ttl {
+          display: none;
+        }
+      }
+      &-pageNavBlock {
+        // position: relative;
+        &__btn {
+          display: inline-block;
+          margin: 10px 5px 0;
+          @include sp() {
+            margin: 0 5px 0;
+          }
+        }
+      }
+      &-pageScrollBtnBox {
+        display: none;
+      }
+    }
+  }
+  &-headerBlock {
+    top: -100px;
+  }
+  &-menubar &-headerBlock {
+    position: fixed;
+    z-index: 1000;
+    // overflow: hidden;
+    display: block;
+    // min-height: auto;
+    background: rgba(200, 200, 200, 0.5);
+    height: 100px;
+    width: 100%;
+    top: 0;
+    transition: all .3s linear;
+  }
+  //pagetop
+  &-pageTopBtnBox {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 30px;
+    margin: auto;
+    display: block;
+    text-align: center;
+    width: 100px;
+    height: 2em;
+    margin-top: -80px;
+  }
+  &-pageTopBtn {
+    height: inherit;
+    width: inherit;
+    text-align: center;
+    display: inline-block;
+    line-height: 1em;
+    @include font-size(15);
+    color: #666;
+    font-family: $font-family-pop2;
+    text-decoration: none;
+    font-weight: bold;
+    &::before {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 80px;
+      // background: #fff;
+      background: rgba(0, 0, 0, 0.1);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+      border-radius: 50%;
+      z-index: -1;
+    }
+    &::after {
+      content: "";
+      display: block;
+      width: 1em;
+      height: 1em;
+      border-top: 2px solid #999;
+      border-right: 2px solid #999;
+      position: absolute;
+      top: 0;
+      bottom: 2em;
+      right: 0;
+      left: 0;
+      margin: auto;
+      z-index: -1;
+      transform: rotate(-45deg);
+    }
+  }
+  &-skillList {
+    list-style: none;
+    @include cf;
+    margin: 0;
+    padding: 0;
+    &__item {
+      display: inline-table;
+      float: left;
+      vertical-align: top;
+      height: 10em;
+      width: 30%;
+      padding: 10px;
+      margin: 0;
+      @include sp() {
+        width: 50%;
+        &:nth-child(2n+1) {
+          clear: both;
+        }
+      }
+      @include pc() {
+        width: 25%;
+        &:nth-child(4n+1) {
+          clear: both;
+        }
+      }
+      @include tab() {
+        width: 33%;
+        &:nth-child(3n+1) {
+          clear: both;
+        }
+      }
+    }
+  }
+  &-skillinnerBox {
+    background: #f0f0f0;
+    display: block;
+    display: table-cell;
+    border-radius: 4px;
+    overflow: hidden;
+    // height: 10em;
+    &__ttl {
+      background: #999;
+      color: #fff;
+      padding: 10px 4px;
+      text-align: center;
+      @include font-size(22);
+      line-height: 1em;
+      font-weight: normal;
+      font-family: $font-family-pop2;
+      // letter-spacing: 0.1em;
+    }
+    &__txt {
+      padding: 0 4px 4px;
+      margin: 0 1em 0 2em;
+      line-height: 1.2em;
+      color: #666;
+      @include font-size(14);
+      position: relative;
+      &:first-of-type {
+        padding-top: 10px;
+      }
+      &::before {
+        content: " ";
+        position: absolute;
+        width: 0.6em;
+        height: 0.6em;
+        border: 3px dotted #666;
+        margin-left: -1.2em;
+        margin-top: 0.2em;
+        border-radius: 50%;
+      }
+    }
+    &--ps &__ttl {
+      background-color: #00BCD4;
+    }
+    &--ill &__ttl {
+      background-color: #FF9800;
+    }
+    &--fla &__ttl {
+      background-color: #E91E63;
+    }
+    &--html5 &__ttl {
+      background-color: #FF7043;
+    }
+    &--pug &__ttl {
+      background-color: #4DB6AC;
+    }
+    &--sass &__ttl {
+      background-color: #F06292;
+    }
+    &--js &__ttl {
+      background-color: #FBC02D;
+    }
+    &--gulp &__ttl {
+      background-color: #f44336;
+    }
+    &--git &__ttl {
+      background-color: #FF5722;
+    }
+    &--css &__ttl {
+      background-color: #42A5F5;
+    }
+    &--md &__ttl {
+      background-color: #999;
+    }
+  }
+  &-profList {
+    &__ttl {
+      @include font-size(20);
+      margin: 2em 2em 0.5em 2em;
+      padding: 0;
+      position: relative;
+      line-height: 1.2em;
+      &::before {
+        content: " ";
+        position: absolute;
+        width: 0.6em;
+        height: 0.6em;
+        border: 3px dotted #666;
+        margin-left: -1.2em;
+        margin-top: 0.2em;
+        border-radius: 50%;
+      }
+    }
+    &__txt {
+      // margin: 2em 2em 0em 2em;
+      padding: 0;
+    }
+  }
+}

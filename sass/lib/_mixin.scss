@@ -1,0 +1,53 @@
+//デバイス定義
+// ex.
+// @include sp() {
+// 
+// }
+@mixin sp {
+  @media print,
+  screen and (max-width: $breakPoint_sp+px) {
+    @content;
+  }
+}
+
+@mixin tab {
+  @media print,
+  screen and (min-width: $breakPoint_sp+1+px)and ( max-width: $breakPoint_pc+px) {
+    @content;
+  }
+}
+
+@mixin pc {
+  @media print,
+  screen and (min-width: $breakPoint_pc+1+px) {
+    @content;
+  }
+}
+
+//clearfix
+//--------------------------
+// ex.
+// @include cf;
+//--------------------------
+@mixin cf {
+  zoom: 1;
+  &:before,
+  &:after {
+    display: block;
+    height: 0;
+    visibility: hidden;
+    content: "\0020";
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+//--------------------------
+// ex.
+//@include font-size(14);
+//--------------------------
+@mixin font-size($size) {
+  font-size: $size+px;
+  font-size: ($size / $base_fz) * 1rem;
+}

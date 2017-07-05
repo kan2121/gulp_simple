@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "browser": {
+    "jquery": "./node_modules/jquery/dist/jquery.js"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.11",
+    "browserify": "^14.4.0",
+    "gulp": "^3.9.1",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-pug": "^3.3.0",
+    "gulp-sass": "^3.1.0",
+    "jquery": "^3.2.1",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}

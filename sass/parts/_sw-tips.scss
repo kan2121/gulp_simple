@@ -1,0 +1,11 @@
+.sw {
+  &-preBlock {
+    border: 1px solid #CCC;
+    padding: 10px 20px;
+    background-color: #F4F2EC;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    @include font-size(12);
+    overflow: auto;
+  }
+}

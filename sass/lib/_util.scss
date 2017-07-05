@@ -1,0 +1,27 @@
+.pci {
+    display: inline;
+    @include sp {
+        display: none;
+    }
+}
+
+.spi {
+    display: none;
+    @include sp {
+        display: inline;
+    }
+}
+
+.pc {
+    display: block;
+    @include sp {
+        display: none;
+    }
+}
+
+.sp {
+    display: none;
+    @include sp {
+        display: block;
+    }
+}
